@@ -150,6 +150,9 @@ Depth-Anything/
 *.rar
 *.7z
 
+# Large image files (>1MB)
+data/portrait1.jpg
+
 # IDE and editor files
 .vscode/
 .idea/
