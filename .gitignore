@@ -183,9 +183,13 @@ logs/
 .cache/
 cache/
 
-# Test files
+# Test files and development scripts
 test_*.py
 *_test.py
+*_demo.py
+*_debug.py
+working_*.py
+real_*.py
 tests/
 
 # Documentation build
