@@ -1,0 +1,22 @@
+# Image Bokeh Effect Demo Dependencies
+# Based on reference document methodology
+
+# Core dependencies
+torch>=1.9.0
+torchvision>=0.10.0
+opencv-python>=4.5.0
+numpy>=1.21.0
+
+# Optional but recommended for better performance
+timm>=0.4.12
+
+# For development and testing (optional)
+matplotlib>=3.3.0
+pillow>=8.0.0
+
+# Installation notes:
+# 1. For CPU-only: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+# 2. For CUDA support: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+# 3. Then install other dependencies: pip install -r requirements.txt
+
+
