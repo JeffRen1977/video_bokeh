@@ -5,12 +5,17 @@ Depth-Anything Portrait Effect Module
 This module provides depth-aware portrait effects using the Depth-Anything model.
 It implements the corrected depth interpretation logic to ensure proper face sharpening.
 
+Reference: Chapter 19, Section 19.2.2 - Depth-Anything Approach
+
 Key Features:
-- Depth-Anything depth estimation
+- Depth-Anything depth estimation using DINOv2 backbone
 - Corrected depth interpretation (low values = background, high values = face)
-- Face detection for additional protection
-- Multiple threshold strategies
+- Face detection for additional protection (Section 19.3)
+- Multiple threshold strategies (Section 19.4)
 - Professional portrait quality
+- 3x faster than MiDaS (Section 19.5)
+
+For educational tutorials, see chapter19/ directory.
 """
 
 import cv2

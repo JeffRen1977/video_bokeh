@@ -1,4 +1,32 @@
-# Chapter X: Depth-Aware Portrait Effects for Mobile Computational Photography
+# Chapter 19: Depth-Aware Portrait Effects for Mobile Computational Photography
+
+> **Implementation Guide**: This repository contains the complete implementation and educational materials for **Chapter 19** of "Mobile Computational Photography" book. The code demonstrates monocular depth estimation techniques for creating professional portrait effects.
+
+## 📚 Quick Start for Chapter 19
+
+If you're reading Chapter 19 and want to understand the concepts hands-on:
+
+1. **Start with Tutorials**: Go to `chapter19/` directory and run the step-by-step tutorials
+2. **Run Examples**: Each tutorial demonstrates key concepts from specific sections
+3. **Compare Results**: Check your results against the book's examples
+
+```bash
+# Navigate to chapter19 directory
+cd chapter19
+
+# Run basic concepts tutorial (Section 19.1)
+python 01_basic_concepts.py
+
+# Run face detection tutorial (Section 19.3)
+python 02_face_detection.py
+
+# Run complete pipeline (Section 19.5)
+python 06_complete_pipeline.py
+```
+
+For the full implementation and comparison tools, see the main `portrait_comparison.py` script.
+
+---
 
 ## Abstract
 
@@ -23,6 +51,23 @@ The primary objectives of this work are:
 ### 1.2 Chapter Organization
 
 This chapter is organized as follows: Section 2 provides background on monocular depth estimation and portrait effects. Section 3 details the technical implementation of both approaches. Section 4 presents experimental results and performance analysis. Section 5 discusses the findings and implications for mobile computational photography. Section 6 concludes with future directions and research opportunities.
+
+### 1.3 Code Organization
+
+This repository is organized to help you understand Chapter 19:
+
+- **`chapter19/`**: Educational tutorials and step-by-step examples
+  - `01_basic_concepts.py`: Understanding depth maps (Section 19.1)
+  - `02_face_detection.py`: Face detection and protection (Section 19.3)
+  - `06_complete_pipeline.py`: Complete implementation (Section 19.5)
+  
+- **`approaches/`**: Production implementations
+  - `midas/`: MiDaS depth estimation (Section 19.2.1)
+  - `depth_anything/`: Depth-Anything depth estimation (Section 19.2.2)
+  
+- **`comparison/`**: Comparison framework for evaluating approaches
+
+- **`portrait_comparison.py`**: Main script for running comparisons
 
 ## 2. Background and Related Work
 
