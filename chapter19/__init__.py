@@ -9,6 +9,6 @@ Tutorials:
 - 02_face_detection.py: Face detection and protection
 - 06_complete_pipeline.py: Complete end-to-end implementation
 
-For production code, see the approaches/ directory.
+For production code, see the production/ directory.
 """
 

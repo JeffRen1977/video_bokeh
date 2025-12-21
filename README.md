@@ -35,6 +35,81 @@ python 06_complete_pipeline.py
 
 For the full implementation and comparison tools, see the main `portrait_comparison.py` script.
 
+### 🎓 Tutorials vs Production Code
+
+This repository provides two types of code:
+
+**📚 `chapter19/` - Educational Tutorials**
+- **Purpose**: Learn Chapter 19 concepts step-by-step
+- **Style**: Simplified, heavily commented, educational
+- **Use Case**: Understanding how things work
+- **Best For**: Students learning Chapter 19
+
+**⚙️ `production/` - Production Code**
+- **Purpose**: Production-ready, optimized implementations
+- **Style**: Complete, robust, production-grade
+- **Use Case**: Real applications and integration
+- **Best For**: Developers building applications
+
+**Quick Comparison:**
+
+| Aspect | Tutorials (`chapter19/`) | Production (`production/`) |
+|--------|-------------------------|---------------------------|
+| **Complexity** | Simplified examples | Complete implementation |
+| **Comments** | Extensive explanations | Minimal, focused |
+| **Error Handling** | Basic, for learning | Robust, production-grade |
+| **Performance** | Demonstrative | Optimized |
+| **Documentation** | Step-by-step guides | API reference |
+
+**When to use what:**
+- **Learning Chapter 19?** → Start with `chapter19/` tutorials
+- **Building an app?** → Use `production/` code
+- **Understanding concepts?** → Read `chapter19/` tutorials
+- **Need production code?** → Import from `production/`
+
+### 🚀 Using Production Code
+
+The production code can be used in several ways:
+
+#### Option 1: Using the Main Script (Recommended)
+
+```bash
+# Process single image with both approaches
+python portrait_comparison.py --single data/portrait1.jpg
+
+# Process all images
+python portrait_comparison.py --all
+
+# Run comprehensive comparison
+python portrait_comparison.py --compare
+```
+
+#### Option 2: Direct Python Import
+
+```python
+from production.midas.midas_portrait import MiDaSPortraitProcessor
+from production.depth_anything.depth_anything_portrait import DepthAnythingPortraitProcessor
+
+# Initialize processors
+midas_processor = MiDaSPortraitProcessor(device='cpu')
+depth_anything_processor = DepthAnythingPortraitProcessor(device='cpu')
+
+# Process images
+results = midas_processor.process_image('data/portrait1.jpg', 'results/midas')
+```
+
+#### Option 3: Running Individual Modules
+
+```bash
+# Run MiDaS processor
+python -m production.midas.midas_portrait data/portrait1.jpg
+
+# Run Depth-Anything processor
+python -m production.depth_anything.depth_anything_portrait data/portrait1.jpg
+```
+
+For detailed API documentation and examples, see [`production/README.md`](production/README.md).
+
 ### 📖 Additional Documentation
 
 For detailed learning guides and documentation, see the [`doc/`](doc/) folder:
@@ -80,9 +155,10 @@ This repository is organized to help you understand Chapter 19:
   - `05_portrait_effect.py`: Portrait effect creation (Section 19.4)
   - `06_complete_pipeline.py`: Complete implementation (Section 19.5)
   
-- **`approaches/`**: Production implementations
+- **`production/`**: Production-ready implementations
   - `midas/midas_portrait.py`: MiDaS depth estimation (Section 19.2.1)
   - `depth_anything/depth_anything_portrait.py`: Depth-Anything depth estimation (Section 19.2.2)
+  - See [`production/README.md`](production/README.md) for usage instructions
   
 - **`comparison/`**: Comparison framework for evaluating approaches
   - `compare_approaches.py`: Side-by-side comparison logic
@@ -164,14 +240,15 @@ video_bokeh/
 │   ├── 06_complete_pipeline.py       # Tutorial 6: Complete pipeline
 │   ├── README.md                      # Tutorial guide
 │   └── results/                       # Tutorial outputs
-├── approaches/                        # Production implementations
+├── production/                        # Production-ready implementations
 │   ├── midas/
 │   │   ├── midas_portrait.py          # MiDaS implementation (Section 19.2.1)
 │   │   └── __init__.py
 │   ├── depth_anything/
 │   │   ├── depth_anything_portrait.py # Depth-Anything (Section 19.2.2)
 │   │   └── __init__.py
-│   └── __init__.py
+│   ├── __init__.py
+│   └── README.md                      # Production code documentation
 ├── comparison/                        # Comparison framework
 │   ├── compare_approaches.py          # Side-by-side comparison logic
 │   └── __init__.py

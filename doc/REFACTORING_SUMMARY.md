@@ -47,8 +47,8 @@ The codebase has been refactored to better align with **Chapter 19** of "Mobile 
 - Clear mapping between code and book content
 
 **Enhanced Code Comments**:
-- `approaches/midas/midas_portrait.py`: References Section 19.2.1
-- `approaches/depth_anything/depth_anything_portrait.py`: References Section 19.2.2
+- `production/midas/midas_portrait.py`: References Section 19.2.1
+- `production/depth_anything/depth_anything_portrait.py`: References Section 19.2.2
 - All tutorials include section references
 
 ## File Structure
@@ -61,7 +61,7 @@ video_bokeh/
 │   ├── 01_basic_concepts.py      # Section 19.1
 │   ├── 02_face_detection.py      # Section 19.3
 │   └── 06_complete_pipeline.py   # Section 19.5
-├── approaches/                    # Production code (enhanced)
+├── production/                    # Production code (enhanced)
 │   ├── midas/                    # Section 19.2.1
 │   └── depth_anything/           # Section 19.2.2
 ├── README.md                      # Updated with Chapter 19 guide

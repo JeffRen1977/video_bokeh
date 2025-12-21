@@ -13,7 +13,7 @@ Your project is now properly set up for GitHub with appropriate exclusions for l
 - ✅ `setup_depth_anything.sh` - Setup script for Depth-Anything
 
 ### **Source Code:**
-- ✅ `approaches/` - Core depth estimation modules
+- ✅ `production/` - Core depth estimation modules
   - `midas/` - MiDaS implementation
   - `depth_anything/` - Depth-Anything implementation
 - ✅ `comparison/` - Comparison framework

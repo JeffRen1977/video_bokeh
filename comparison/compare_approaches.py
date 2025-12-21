@@ -19,8 +19,8 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent))
 
-from approaches.midas.midas_portrait import MiDaSPortraitProcessor
-from approaches.depth_anything.depth_anything_portrait import DepthAnythingPortraitProcessor
+from production.midas.midas_portrait import MiDaSPortraitProcessor
+from production.depth_anything.depth_anything_portrait import DepthAnythingPortraitProcessor
 
 
 class PortraitApproachComparator:

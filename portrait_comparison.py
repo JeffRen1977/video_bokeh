@@ -20,8 +20,8 @@ from pathlib import Path
 # Add current directory to path
 sys.path.append(str(Path(__file__).parent))
 
-from approaches.midas.midas_portrait import MiDaSPortraitProcessor
-from approaches.depth_anything.depth_anything_portrait import DepthAnythingPortraitProcessor
+from production.midas.midas_portrait import MiDaSPortraitProcessor
+from production.depth_anything.depth_anything_portrait import DepthAnythingPortraitProcessor
 from comparison.compare_approaches import PortraitApproachComparator
 
 

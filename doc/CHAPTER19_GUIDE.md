@@ -68,7 +68,7 @@ python chapter19/02_face_detection.py
 
 #### Option A: MiDaS (Section 19.2.1)
 
-**Production Code**: `approaches/midas/midas_portrait.py`
+**Production Code**: `production/midas/midas_portrait.py`
 
 **What you'll learn**:
 - How MiDaS model works
@@ -87,7 +87,7 @@ python portrait_comparison.py --single data/portrait1.jpg --approach midas
 
 #### Option B: Depth-Anything (Section 19.2.2)
 
-**Production Code**: `approaches/depth_anything/depth_anything_portrait.py`
+**Production Code**: `production/depth_anything/depth_anything_portrait.py`
 
 **What you'll learn**:
 - How Depth-Anything model works
@@ -134,8 +134,8 @@ python portrait_comparison.py --compare
 | Book Section | Code Location | Description |
 |--------------|---------------|-------------|
 | **19.1 Introduction** | `chapter19/01_basic_concepts.py` | Basic depth map concepts |
-| **19.2.1 MiDaS** | `approaches/midas/midas_portrait.py` | MiDaS implementation |
-| **19.2.2 Depth-Anything** | `approaches/depth_anything/depth_anything_portrait.py` | Depth-Anything implementation |
+| **19.2.1 MiDaS** | `production/midas/midas_portrait.py` | MiDaS implementation |
+| **19.2.2 Depth-Anything** | `production/depth_anything/depth_anything_portrait.py` | Depth-Anything implementation |
 | **19.3 Face Detection** | `chapter19/02_face_detection.py` | Face detection tutorial |
 | **19.4 Blurring Strategies** | Both processor classes | Conservative, face-aware, adaptive |
 | **19.5 Complete Implementation** | `chapter19/06_complete_pipeline.py` | Full pipeline |

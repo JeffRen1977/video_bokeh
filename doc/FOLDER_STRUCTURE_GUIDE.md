@@ -10,7 +10,7 @@ This guide explains which folders are essential for Chapter 19 and which can be 
 - **Status**: ✅ **KEEP** - Core educational content
 - **Contains**: 6 tutorial scripts, README
 
-### 2. **`approaches/`** - Production Implementations
+### 2. **`production/`** - Production Implementations
 - **Purpose**: Production code for MiDaS and Depth-Anything
 - **Size**: Small (~50KB)
 - **Status**: ✅ **KEEP** - Required by tutorials and main script
@@ -112,7 +112,7 @@ git rm --cached GIT_SETUP_COMPLETE.md
 
 **Keep:**
 - ✅ `chapter19/` - Educational tutorials
-- ✅ `approaches/` - Production code
+- ✅ `production/` - Production code
 - ✅ `data/` - Test images
 - ✅ `comparison/` - Comparison framework
 - ✅ `results/` - Example outputs
