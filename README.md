@@ -89,6 +89,9 @@ cd chapter19
 # Tutorial 1: Basic concepts (Section 19.1)
 python 01_basic_concepts.py
 
+# Note: Tutorials are run from chapter19/ directory
+# But production scripts (portrait_comparison.py) are run from project root
+
 # Tutorial 2: Face detection (Section 19.3)
 python 02_face_detection.py
 
@@ -105,7 +108,11 @@ python 05_portrait_effect.py
 python 06_complete_pipeline.py
 ```
 
-For the full implementation and comparison tools, see the main `portrait_comparison.py` script.
+**⚠️ Important**: 
+- **Tutorials** (above) are run from the `chapter19/` directory
+- **Production scripts** (`portrait_comparison.py`) must be run from the **project root** directory
+
+For the full implementation and comparison tools, see the main `portrait_comparison.py` script (run from project root).
 
 ### 🎓 Tutorials vs Production Code
 
@@ -145,9 +152,14 @@ The production code can be used in several ways:
 
 #### Option 1: Using the Main Script (Recommended)
 
-**Important**: Make sure the virtual environment is activated first!
+**Important**: 
+- Make sure the virtual environment is activated first!
+- Run this command from the **project root directory** (`video_bokeh/`), not from `chapter19/`
 
 ```bash
+# Navigate to project root (if you're in chapter19/, go back)
+cd /path/to/video_bokeh  # or just: cd ..  (if you're in chapter19/)
+
 # Activate virtual environment (if not already activated)
 source ../venv/bin/activate
 
@@ -177,9 +189,14 @@ results = midas_processor.process_image('data/portrait1.jpg', 'results/midas')
 
 #### Option 3: Running Individual Modules
 
-**Important**: Make sure the virtual environment is activated first!
+**Important**: 
+- Make sure the virtual environment is activated first!
+- Run these commands from the **project root directory** (`video_bokeh/`)
 
 ```bash
+# Navigate to project root (if you're in chapter19/, go back)
+cd /path/to/video_bokeh  # or just: cd ..  (if you're in chapter19/)
+
 # Activate virtual environment (if not already activated)
 source ../venv/bin/activate
 
@@ -229,8 +246,11 @@ echo $VIRTUAL_ENV
   - `cv2` (OpenCV): `pip install opencv-python`
   - `torch`: `pip install torch torchvision`
 
-**Problem**: `command not found: python`
-- **Solution**: Use `python3` instead, or ensure Python is installed in the venv
+**Problem**: `command not found: python` or `can't open file 'portrait_comparison.py'`
+- **Solution**: 
+  - Make sure you're in the project root directory (`video_bokeh/`), not in `chapter19/`
+  - If you're in `chapter19/`, run: `cd ..` to go back to root
+  - Use `python3` instead of `python` if needed
 
 **Problem**: `No module named 'timm'` when running MiDaS tutorials
 - **Solution**: Install timm: `pip install timm>=0.4.12`
