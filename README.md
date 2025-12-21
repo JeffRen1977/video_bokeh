@@ -14,17 +14,33 @@ If you're reading Chapter 19 and want to understand the concepts hands-on:
 # Navigate to chapter19 directory
 cd chapter19
 
-# Run basic concepts tutorial (Section 19.1)
+# Tutorial 1: Basic concepts (Section 19.1)
 python 01_basic_concepts.py
 
-# Run face detection tutorial (Section 19.3)
+# Tutorial 2: Face detection (Section 19.3)
 python 02_face_detection.py
 
-# Run complete pipeline (Section 19.5)
+# Tutorial 3: MiDaS depth estimation (Section 19.2.1)
+python 03_depth_estimation_midas.py
+
+# Tutorial 4: Depth-Anything depth estimation (Section 19.2.2)
+python 04_depth_estimation_depth_anything.py
+
+# Tutorial 5: Portrait effect creation (Section 19.4)
+python 05_portrait_effect.py
+
+# Tutorial 6: Complete pipeline (Section 19.5)
 python 06_complete_pipeline.py
 ```
 
 For the full implementation and comparison tools, see the main `portrait_comparison.py` script.
+
+### 📖 Additional Documentation
+
+For detailed learning guides and documentation, see the [`doc/`](doc/) folder:
+- **[CHAPTER19_GUIDE.md](doc/CHAPTER19_GUIDE.md)**: Complete learning guide with step-by-step instructions
+- **[FOLDER_STRUCTURE_GUIDE.md](doc/FOLDER_STRUCTURE_GUIDE.md)**: Repository structure explanation
+- **[REFACTORING_SUMMARY.md](doc/REFACTORING_SUMMARY.md)**: Documentation of refactoring work
 
 ---
 
@@ -59,15 +75,26 @@ This repository is organized to help you understand Chapter 19:
 - **`chapter19/`**: Educational tutorials and step-by-step examples
   - `01_basic_concepts.py`: Understanding depth maps (Section 19.1)
   - `02_face_detection.py`: Face detection and protection (Section 19.3)
+  - `03_depth_estimation_midas.py`: MiDaS depth estimation (Section 19.2.1)
+  - `04_depth_estimation_depth_anything.py`: Depth-Anything depth estimation (Section 19.2.2)
+  - `05_portrait_effect.py`: Portrait effect creation (Section 19.4)
   - `06_complete_pipeline.py`: Complete implementation (Section 19.5)
   
 - **`approaches/`**: Production implementations
-  - `midas/`: MiDaS depth estimation (Section 19.2.1)
-  - `depth_anything/`: Depth-Anything depth estimation (Section 19.2.2)
+  - `midas/midas_portrait.py`: MiDaS depth estimation (Section 19.2.1)
+  - `depth_anything/depth_anything_portrait.py`: Depth-Anything depth estimation (Section 19.2.2)
   
 - **`comparison/`**: Comparison framework for evaluating approaches
+  - `compare_approaches.py`: Side-by-side comparison logic
 
-- **`portrait_comparison.py`**: Main script for running comparisons
+- **`doc/`**: Additional documentation
+  - `CHAPTER19_GUIDE.md`: Complete learning guide
+  - `FOLDER_STRUCTURE_GUIDE.md`: Repository structure explanation
+  - `REFACTORING_SUMMARY.md`: Refactoring documentation
+
+- **Main Scripts:**
+  - `portrait_comparison.py`: Main script for running comparisons
+  - `setup_depth_anything.sh`: Setup script for Depth-Anything repository
 
 ## 2. Background and Related Work
 
@@ -128,21 +155,37 @@ The implementation follows a modular architecture designed for extensibility and
 
 ```
 video_bokeh/
-├── approaches/                        # Core depth estimation approaches
+├── chapter19/                         # Educational tutorials (Section 19.1-19.5)
+│   ├── 01_basic_concepts.py           # Tutorial 1: Basic concepts
+│   ├── 02_face_detection.py           # Tutorial 2: Face detection
+│   ├── 03_depth_estimation_midas.py  # Tutorial 3: MiDaS depth estimation
+│   ├── 04_depth_estimation_depth_anything.py  # Tutorial 4: Depth-Anything
+│   ├── 05_portrait_effect.py         # Tutorial 5: Portrait effects
+│   ├── 06_complete_pipeline.py       # Tutorial 6: Complete pipeline
+│   ├── README.md                      # Tutorial guide
+│   └── results/                       # Tutorial outputs
+├── approaches/                        # Production implementations
 │   ├── midas/
-│   │   ├── midas_portrait.py          # MiDaS implementation
+│   │   ├── midas_portrait.py          # MiDaS implementation (Section 19.2.1)
 │   │   └── __init__.py
 │   ├── depth_anything/
-│   │   ├── depth_anything_portrait.py # Depth-Anything implementation
+│   │   ├── depth_anything_portrait.py # Depth-Anything (Section 19.2.2)
 │   │   └── __init__.py
 │   └── __init__.py
 ├── comparison/                        # Comparison framework
 │   ├── compare_approaches.py          # Side-by-side comparison logic
 │   └── __init__.py
 ├── data/                              # Input portrait images
+├── doc/                               # Additional documentation
+│   ├── README.md                      # Documentation index
+│   ├── CHAPTER19_GUIDE.md            # Complete learning guide
+│   ├── FOLDER_STRUCTURE_GUIDE.md     # Repository structure guide
+│   └── REFACTORING_SUMMARY.md        # Refactoring documentation
 ├── results/                           # Generated output results
 ├── portrait_comparison.py             # Main orchestrator script
-└── requirements.txt                   # Python dependencies
+├── setup_depth_anything.sh           # Setup script
+├── requirements.txt                   # Python dependencies
+└── README.md                          # This file
 ```
 
 ### 3.2 Core Components
