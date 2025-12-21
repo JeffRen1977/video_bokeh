@@ -153,6 +153,10 @@ Depth-Anything/
 # Large image files (>1MB)
 data/portrait1.jpg
 
+# PDF files (too large for GitHub)
+*.pdf
+Mobile computational photograph.pdf
+
 # IDE and editor files
 .vscode/
 .idea/
