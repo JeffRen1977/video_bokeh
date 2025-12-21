@@ -2,15 +2,73 @@
 
 > **Implementation Guide**: This repository contains the complete implementation and educational materials for **Chapter 19** of "Mobile Computational Photography" book. The code demonstrates monocular depth estimation techniques for creating professional portrait effects.
 
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- Python 3.9+
+- Virtual environment (venv) in the parent directory
+- CUDA (optional, for GPU acceleration)
+
+### Step 1: Activate Virtual Environment
+
+The virtual environment is located in the parent directory. Activate it before running any scripts:
+
+```bash
+# Navigate to project directory
+cd video_bokeh
+
+# Activate virtual environment from parent directory
+# On macOS/Linux:
+source ../venv/bin/activate
+
+# On Windows:
+# ..\venv\Scripts\activate
+```
+
+**Note**: Make sure to activate the virtual environment before running any Python scripts!
+
+### Step 2: Install Dependencies
+
+```bash
+# Ensure virtual environment is activated (you should see (venv) in your prompt)
+pip install -r requirements.txt
+```
+
+### Step 3: Setup Depth-Anything Repository
+
+```bash
+# Option 1: Use the setup script (recommended)
+./setup_depth_anything.sh
+
+# Option 2: Manual setup
+git clone https://github.com/LiheYoung/Depth-Anything.git
+cd Depth-Anything
+pip install -r requirements.txt
+cd ..
+```
+
+### Step 4: Verify Installation
+
+```bash
+# Test that everything is set up correctly
+python -c "import torch; import cv2; print('✅ Dependencies installed')"
+```
+
 ## 📚 Quick Start for Chapter 19
 
 If you're reading Chapter 19 and want to understand the concepts hands-on:
+
+**Important**: Make sure you've activated the virtual environment first (see Installation above)!
 
 1. **Start with Tutorials**: Go to `chapter19/` directory and run the step-by-step tutorials
 2. **Run Examples**: Each tutorial demonstrates key concepts from specific sections
 3. **Compare Results**: Check your results against the book's examples
 
 ```bash
+# Activate virtual environment first (if not already activated)
+source ../venv/bin/activate
+
 # Navigate to chapter19 directory
 cd chapter19
 
@@ -73,7 +131,12 @@ The production code can be used in several ways:
 
 #### Option 1: Using the Main Script (Recommended)
 
+**Important**: Make sure the virtual environment is activated first!
+
 ```bash
+# Activate virtual environment (if not already activated)
+source ../venv/bin/activate
+
 # Process single image with both approaches
 python portrait_comparison.py --single data/portrait1.jpg
 
@@ -100,7 +163,12 @@ results = midas_processor.process_image('data/portrait1.jpg', 'results/midas')
 
 #### Option 3: Running Individual Modules
 
+**Important**: Make sure the virtual environment is activated first!
+
 ```bash
+# Activate virtual environment (if not already activated)
+source ../venv/bin/activate
+
 # Run MiDaS processor
 python -m production.midas.midas_portrait data/portrait1.jpg
 
@@ -109,6 +177,48 @@ python -m production.depth_anything.depth_anything_portrait data/portrait1.jpg
 ```
 
 For detailed API documentation and examples, see [`production/README.md`](production/README.md).
+
+## ⚠️ Important Notes
+
+### Virtual Environment Location
+
+The virtual environment is located in the **parent directory** (`../venv/`), not in this project directory. Always activate it before running any Python scripts:
+
+```bash
+# From video_bokeh directory
+source ../venv/bin/activate
+
+# You should see (venv) in your terminal prompt
+# Example: (venv) user@computer:~/video_bokeh$
+```
+
+### Verifying Virtual Environment
+
+To check if the virtual environment is activated:
+
+```bash
+# Check Python location (should point to venv)
+which python
+# Should show: ../venv/bin/python
+
+# Or check if venv is active
+echo $VIRTUAL_ENV
+# Should show the path to ../venv
+```
+
+### Troubleshooting
+
+**Problem**: `ModuleNotFoundError` when running scripts
+- **Solution**: Make sure virtual environment is activated: `source ../venv/bin/activate`
+
+**Problem**: `command not found: python`
+- **Solution**: Use `python3` instead, or ensure Python is installed in the venv
+
+**Problem**: Depth-Anything model fails to load
+- **Solution**: Run `./setup_depth_anything.sh` to set up the Depth-Anything repository
+
+**Problem**: CUDA/GPU not working
+- **Solution**: Ensure PyTorch with CUDA support is installed in the venv: `pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118`
 
 ### 📖 Additional Documentation
 
