@@ -32,8 +32,18 @@ source ../venv/bin/activate
 
 ```bash
 # Ensure virtual environment is activated (you should see (venv) in your prompt)
+# Install all required dependencies
 pip install -r requirements.txt
+
+# This will install:
+# - torch, torchvision (PyTorch)
+# - opencv-python (Computer vision)
+# - numpy (Numerical computing)
+# - timm (Required for MiDaS model)
+# - matplotlib, pillow (Optional, for visualization)
 ```
+
+**Important**: Make sure all dependencies are installed. The `timm` package is required for MiDaS to work.
 
 ### Step 3: Setup Depth-Anything Repository
 
@@ -52,7 +62,11 @@ cd ..
 
 ```bash
 # Test that everything is set up correctly
-python -c "import torch; import cv2; print('✅ Dependencies installed')"
+python -c "import torch; import cv2; import timm; import numpy; print('✅ All core dependencies installed')"
+
+# If you get an error about missing modules, install them:
+# pip install timm  # If timm is missing
+# pip install opencv-python  # If cv2 is missing
 ```
 
 ## 📚 Quick Start for Chapter 19
@@ -210,9 +224,17 @@ echo $VIRTUAL_ENV
 
 **Problem**: `ModuleNotFoundError` when running scripts
 - **Solution**: Make sure virtual environment is activated: `source ../venv/bin/activate`
+- **Common missing modules**: 
+  - `timm` (required for MiDaS): `pip install timm`
+  - `cv2` (OpenCV): `pip install opencv-python`
+  - `torch`: `pip install torch torchvision`
 
 **Problem**: `command not found: python`
 - **Solution**: Use `python3` instead, or ensure Python is installed in the venv
+
+**Problem**: `No module named 'timm'` when running MiDaS tutorials
+- **Solution**: Install timm: `pip install timm>=0.4.12`
+- **Note**: timm is required for MiDaS model to work
 
 **Problem**: Depth-Anything model fails to load
 - **Solution**: Run `./setup_depth_anything.sh` to set up the Depth-Anything repository

@@ -6,9 +6,7 @@ torch>=1.9.0
 torchvision>=0.10.0
 opencv-python>=4.5.0
 numpy>=1.21.0
-
-# Optional but recommended for better performance
-timm>=0.4.12
+timm>=0.4.12  # Required for MiDaS model
 
 # For development and testing (optional)
 matplotlib>=3.3.0
