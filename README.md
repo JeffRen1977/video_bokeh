@@ -7,7 +7,7 @@
 ### Prerequisites
 
 - Python 3.9+
-- Virtual environment (venv) in the parent directory
+- Virtual environment (`../virtual_env/`) in the parent directory
 - CUDA (optional, for GPU acceleration)
 
 ### Step 1: Activate Virtual Environment
@@ -20,10 +20,10 @@ cd video_bokeh
 
 # Activate virtual environment from parent directory
 # On macOS/Linux:
-source ../venv/bin/activate
+source ../virtual_env/bin/activate
 
 # On Windows:
-# ..\venv\Scripts\activate
+# ..\virtual_env\Scripts\activate
 ```
 
 **Note**: Make sure to activate the virtual environment before running any Python scripts!
@@ -31,7 +31,7 @@ source ../venv/bin/activate
 ### Step 2: Install Dependencies
 
 ```bash
-# Ensure virtual environment is activated (you should see (venv) in your prompt)
+# Ensure virtual environment is activated (you should see (virtual_env) in your prompt)
 # Install all required dependencies
 pip install -r requirements.txt
 
@@ -81,7 +81,7 @@ If you're reading Chapter 19 and want to understand the concepts hands-on:
 
 ```bash
 # Activate virtual environment first (if not already activated)
-source ../venv/bin/activate
+source ../virtual_env/bin/activate
 
 # Navigate to chapter19 directory
 cd chapter19
@@ -161,7 +161,7 @@ The production code can be used in several ways:
 cd /path/to/video_bokeh  # or just: cd ..  (if you're in chapter19/)
 
 # Activate virtual environment (if not already activated)
-source ../venv/bin/activate
+source ../virtual_env/bin/activate
 
 # Process single image with both approaches
 python portrait_comparison.py --single data/portrait1.jpg
@@ -198,7 +198,7 @@ results = midas_processor.process_image('data/portrait1.jpg', 'results/midas')
 cd /path/to/video_bokeh  # or just: cd ..  (if you're in chapter19/)
 
 # Activate virtual environment (if not already activated)
-source ../venv/bin/activate
+source ../virtual_env/bin/activate
 
 # Run MiDaS processor
 python -m production.midas.midas_portrait data/portrait1.jpg
@@ -213,14 +213,14 @@ For detailed API documentation and examples, see [`production/README.md`](produc
 
 ### Virtual Environment Location
 
-The virtual environment is located in the **parent directory** (`../venv/`), not in this project directory. Always activate it before running any Python scripts:
+The virtual environment is located in the **parent directory** (`../virtual_env/`), not in this project directory. Always activate it before running any Python scripts:
 
 ```bash
 # From video_bokeh directory
-source ../venv/bin/activate
+source ../virtual_env/bin/activate
 
-# You should see (venv) in your terminal prompt
-# Example: (venv) user@computer:~/video_bokeh$
+# You should see (virtual_env) in your terminal prompt
+# Example: (virtual_env) user@computer:~/video_bokeh$
 ```
 
 ### Verifying Virtual Environment
@@ -228,19 +228,19 @@ source ../venv/bin/activate
 To check if the virtual environment is activated:
 
 ```bash
-# Check Python location (should point to venv)
+# Check Python location (should point to virtual_env)
 which python
-# Should show: ../venv/bin/python
+# Should show: ../virtual_env/bin/python
 
-# Or check if venv is active
+# Or check if virtual_env is active
 echo $VIRTUAL_ENV
-# Should show the path to ../venv
+# Should show the path to ../virtual_env
 ```
 
 ### Troubleshooting
 
 **Problem**: `ModuleNotFoundError` when running scripts
-- **Solution**: Make sure virtual environment is activated: `source ../venv/bin/activate`
+- **Solution**: Make sure virtual environment is activated: `source ../virtual_env/bin/activate`
 - **Common missing modules**: 
   - `timm` (required for MiDaS): `pip install timm`
   - `cv2` (OpenCV): `pip install opencv-python`
@@ -260,7 +260,7 @@ echo $VIRTUAL_ENV
 - **Solution**: Run `./setup_depth_anything.sh` to set up the Depth-Anything repository
 
 **Problem**: CUDA/GPU not working
-- **Solution**: Ensure PyTorch with CUDA support is installed in the venv: `pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118`
+- **Solution**: Ensure PyTorch with CUDA support is installed in the virtual environment: `pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118`
 
 ### 📖 Additional Documentation
 
