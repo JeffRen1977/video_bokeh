@@ -45,7 +45,7 @@ Your project is now properly set up for GitHub with appropriate exclusions for l
 ### **1. Create GitHub Repository:**
 ```bash
 # Create a new repository on GitHub, then:
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git remote add origin https://github.com/JeffRen1977/video_bokeh.git
 git branch -M main
 git push -u origin main
 ```
@@ -53,8 +53,8 @@ git push -u origin main
 ### **2. For New Users:**
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/JeffRen1977/video_bokeh.git
+cd video_bokeh
 
 # Set up the environment
 python -m venv venv
