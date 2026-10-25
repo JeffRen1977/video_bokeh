@@ -114,6 +114,13 @@ python 06_complete_pipeline.py
 
 For the full implementation and comparison tools, see the main `portrait_comparison.py` script (run from project root).
 
+### Run Unit Tests
+
+```bash
+source ../virtual_env/bin/activate
+python3 -m pytest tests/ -v
+```
+
 ### 🎓 Tutorials vs Production Code
 
 This repository provides two types of code:
